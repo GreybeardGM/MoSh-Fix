@@ -1,0 +1,12 @@
+{
+  "id": "mosh-template-fix",
+  "title": "MoSh Template Fix",
+  "version": "1.0",
+  "minimumCoreVersion": "12",
+  "compatibleCoreVersion": "12",
+  "author": "GreybeardGM",
+  "esmodules": ["main.js"],
+  "systems": ["mosh"],
+  "manifest": "https://deine.url/module.json",
+  "download": "https://deine.url/module.zip"
+}
