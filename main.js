@@ -12,10 +12,10 @@ Hooks.once("init", async () => {
 // Lokalisierung laden
 Hooks.once("i18nInit", async () => {
   const lang = game.i18n.lang || "en";
-  const response = await fetch(`modules/mosh-template-fix/lang/${lang}-fix.json`);
+  const response = await fetch(`modules/mosh-template-fix/lang/${lang}.json`);
   const translations = await response.json();
 
-  console.log("🧪 Lokalisierungsdaten geladen:", translations);
+  console.log("🧪 Flat translations:", translations);
 
   foundry.utils.mergeObject(
     game.i18n.translations,
@@ -23,4 +23,3 @@ Hooks.once("i18nInit", async () => {
     { insertKeys: true, inplace: true }
   );
 });
-
