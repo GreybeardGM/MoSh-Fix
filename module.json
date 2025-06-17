@@ -6,6 +6,13 @@
   "author": "GreybeardGM",
   "type": "module",
   "system": "mosh",
+   "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
   "compatibility": {
     "minimum": "12",
     "verified": "12"
