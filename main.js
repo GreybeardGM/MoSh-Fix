@@ -1,3 +1,4 @@
+// Template überschreiben
 Hooks.once("init", async () => {
   const fixedPath = "modules/mosh-template-fix/templates/ship-sheet-fixed.html";
   const originalPath = "systems/mosh/templates/actor/ship-sheet.html";
@@ -6,7 +7,10 @@ Hooks.once("init", async () => {
   templates[originalPath] = fixedPath;
   await loadTemplates(templates);
 
-  // Lokalisierung laden
+});
+
+// Lokalisierung laden
+Hooks.once("i18nInit", async () => {
   const lang = game.i18n.lang || "en";
   const response = await fetch(`modules/mosh-template-fix/lang/${lang}-fix.json`);
   const translations = await response.json();
@@ -19,3 +23,4 @@ Hooks.once("init", async () => {
     { insertKeys: true, inplace: true }
   );
 });
+
