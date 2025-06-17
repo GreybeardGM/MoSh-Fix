@@ -7,9 +7,15 @@ Hooks.once("init", async () => {
   await loadTemplates(templates);
 
   // Lokalisierung laden
-  await fetch(`modules/mosh-template-fix/lang/en-fix.json`)
-    .then(res => res.json())
-    .then(data => {
-      game.i18n.translations = foundry.utils.mergeObject(game.i18n.translations, data);
-    });
+  const lang = game.i18n.lang || "en";
+  const response = await fetch(`modules/mosh-template-fix/lang/${lang}-fix.json`);
+  const translations = await response.json();
+
+  console.log("🧪 Lokalisierungsdaten geladen:", translations);
+
+  foundry.utils.mergeObject(
+    game.i18n.translations,
+    translations,
+    { insertKeys: true, inplace: true }
+  );
 });
